@@ -1,5 +1,6 @@
-let userX; // высота
-let userY; // ширина
+let userX = document.getElementById("userX"); // высота
+let userY = document.getElementById("userY");
+let stat;
 let x = 0; // исходное положение ГГ
 let y = 0;
 let stenaX = []; // положение в ряду стены
@@ -31,9 +32,29 @@ function width() {
 }
 
 function makeMaze() {
+  if (
+    userX.value <= 20 &&
+    userY.value <= 20 &&
+    userY.value > 0 &&
+    userX.value > 0
+  ) {
+    console.log(userY.value);
+    makeMazee();
+  } else if (stat == true) {
+    alert("Вы уже играете");
+  } else if (userY.value <= 0 || userX.value <= 0) {
+    alert("Введите второе число");
+  } else {
+    alert("Введите число меньше");
+  }
+}
+
+function makeMazee() {
   // основная функция создание лабиринта
-  userX = document.getElementById("userX").value;
-  userY = document.getElementById("userY").value;
+  stat = true;
+  userX = document.getElementById("userX").value; // высота
+  userY = document.getElementById("userY").value; // ширина
+
   let numX = Number(userX); //числа полученные из инпутов
   let numY = Number(userY);
   let numS; //Рандомное число для стен
@@ -129,10 +150,16 @@ function finish() {
   if (x == (userY - 1) * 62 && y == (userX - 1) * 62) {
     console.log("FINISH");
     table.classList.add("win");
-    setInterval(() => {
+
+    setTimeout(() => {
       alert("Победа!");
+      location.reload();
     }, 1500);
   }
+}
+
+function newGame() {
+  location.reload();
 }
 
 window.onkeydown = function move() {

@@ -30,17 +30,19 @@
       <input
         id="userY"
         class="userY"
-        type="text"
+        type="number"
         max="23"
         placeholder="Ширина лабиринта"
         value=""
       />
       <br />
       <button id="button" onclick="makeMaze()">Создать!!!</button>
+      <button id="test" class="bbb" onclick="newGame()">Сброс</button>
     </div>
     <br />
-
-    <div id="table" class="tableBody"></div>
+    <div class="parent">
+      <div id="table" class="tableBody"></div>
+    </div>
   </body>
 
   <script src="maze.js"></script>

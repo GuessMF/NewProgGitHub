@@ -15,6 +15,14 @@ let table = document.getElementById("table");
 
 let divs = document.getElementsByClassName("square"); // количество созданных дивок
 
+document.querySelector(".userY").addEventListener("keyup", function () {
+  this.value = this.value.replace(/[^\d]/g, "");
+}); // проверка инпута на ввод только цифр
+
+document.querySelector(".userX").addEventListener("keyup", function () {
+  this.value = this.value.replace(/[^\d]/g, "");
+}); // проверка инпута на ввод только цифр
+
 function height() {
   // высота Х
   let height = document.createElement("div"); // высота
@@ -81,7 +89,7 @@ function makeMazee() {
   divs[dl2].classList.add("finish");
   divs[dl2].innerHTML = "finish";
 
-  for (n = 1; n < Math.floor(dl * 1.5); n++) {
+  for (n = 1; n < Math.floor(dl); n++) {
     // длинна цикла = ко-во квадратов/ 1.6
     numV = Math.floor(Math.random() * dl); // первое рандомное
     numS = Math.floor(Math.random() * dl); // второе рандомное

@@ -14,31 +14,36 @@
     <title>Maze</title>
   </head>
   <body>
-    <div class="topContainer">
-      <h1 class="header">Лабиринт</h1>
+    <div class="top">
+      <div class="topContainer">
+        <h1 class="header">Лабиринт</h1>
 
-      <input
-        id="userX"
-        class="userX"
-        type="text"
-        max="23"
-        placeholder="Высота лабиринта"
-        value=""
-      />
-      <br />
+        <input
+          id="userX"
+          class="userX"
+          type="text"
+          max="23"
+          placeholder="Высота лабиринта Max 20"
+          value=""
+        />
+        <br />
 
-      <input
-        id="userY"
-        class="userY"
-        type="number"
-        max="23"
-        placeholder="Ширина лабиринта"
-        value=""
-      />
-      <br />
-      <button id="button" onclick="makeMaze()">Создать!!!</button>
-      <button id="test" class="bbb" onclick="newGame()">Сброс</button>
+        <label>
+          <input
+            id="userY"
+            class="userY"
+            type="text"
+            placeholder="Ширина лабиринта Max 20"
+            value=""
+          />
+        </label>
+
+        <br />
+        <button id="button" onclick="makeMaze()">Создать!!!</button>
+        <button id="test" class="bbb" onclick="newGame()">Сброс</button>
+      </div>
     </div>
+
     <br />
     <div class="parent">
       <div id="table" class="tableBody"></div>

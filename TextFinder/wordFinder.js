@@ -1,7 +1,8 @@
+let bodyy = document.body.innerHTML;
 function newPage() {
-  let htmlstock = document.body.innerHTML;
-  document.body.innerHTML = htmlstock;
+  document.body.innerHTML = bodyy;
 }
+
 function newCheck() {
   let letterToFind = document.getElementById("input").value; //буква введенная в инпут
   let massives = []; //добавление всех спанов в массив
@@ -27,4 +28,22 @@ function newCheck() {
     }
   }
   changed.innerHTML = words.length;
+  input.value = "";
 }
+
+// function test() {
+//   newPage();
+
+//   setTimeout(newCheck(), 2000);
+// }
+
+// function greeting() {
+//   newCheck();
+// }
+
+// function processUserInput(callback) {
+//   document.body.innerHTML = bodyy;
+//   callback();
+// }
+
+// processUserInput(greeting);

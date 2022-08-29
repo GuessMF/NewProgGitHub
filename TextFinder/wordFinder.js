@@ -28,3 +28,5 @@ function newCheck() {
   }
   changed.innerHTML = words.length;
 }
+
+//test

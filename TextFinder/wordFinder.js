@@ -1,10 +1,27 @@
 let bodyy = document.body.innerHTML;
+let stat = false;
+let foundButton = document.getElementById("found");
+
+// стата Фолс, после поиска буквы стата Тру, жмем на инпут, проверяется на стату, если она Тру, меняем на изначальную страницу
 function newPage() {
   document.body.innerHTML = bodyy;
 }
 
+foundButton.addEventListener("click", () => {
+  newCheck();
+  console.log(stat);
+});
+
+input.addEventListener("click", () => {
+  if (stat == true) {
+    newPage();
+  }
+  console.log(stat);
+});
+
 function newCheck() {
   let letterToFind = document.getElementById("input").value; //буква введенная в инпут
+
   let massives = []; //добавление всех спанов в массив
   let spansLength = document.getElementsByTagName("span").length; // колличество спанов в документе
   let body, mass;
@@ -27,23 +44,25 @@ function newCheck() {
       }
     }
   }
+
   changed.innerHTML = words.length;
+  stat = true;
+
   input.value = "";
 }
 
-// function test() {
-//   newPage();
-
-//   setTimeout(newCheck(), 2000);
+// function innnn() {
+//   if (clk == true && document.body.innerHTML !== bodyy) {
+//     //newPage();
+//     clk = false;
+//     console.log("nado obnovit");
+//   }
 // }
 
-// function greeting() {
+// function testing() {
 //   newCheck();
+//   if (document.body.innerHTML !== bodyy) {
+//
+//     // newCheck();
+//   }
 // }
-
-// function processUserInput(callback) {
-//   document.body.innerHTML = bodyy;
-//   callback();
-// }
-
-// processUserInput(greeting);

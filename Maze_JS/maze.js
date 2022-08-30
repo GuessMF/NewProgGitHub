@@ -6,6 +6,7 @@ let y = 0;
 let stenaX = []; // положение в ряду стены
 let stenaY = []; // номер ряда стены
 let dlinaS; // длина массива со стенами
+let step = 62; //длина шага ГГ
 
 let verhX = []; // положение в ряду потолка
 let verhY = []; // номер ряда потолка
@@ -155,7 +156,7 @@ function makeMazee() {
 
 function finish() {
   //отслеживает положение последней клетки
-  if (x == (userY - 1) * 62 && y == (userX - 1) * 62) {
+  if (x == (userY - 1) * step && y == (userX - 1) * step) {
     console.log("FINISH");
     table.classList.add("win");
 
@@ -177,31 +178,33 @@ window.onkeydown = function move() {
   verhY;
 
   let GG = document.getElementById("gg");
-  let maxWidth = (userY - 1) * 62;
-  let maxHeight = (userX - 1) * 62;
+  let maxWidth = (userY - 1) * step;
+  let maxHeight = (userX - 1) * step;
 
   if (event.keyCode == 37 && x !== 0) {
     //идем влево
     border37();
-    x = x - 62;
+    x = x - step;
     GG.style.left = x + "px";
     finish();
   } else if (event.keyCode == 39 && x !== maxWidth) {
     //идем вправо
     border39();
-    x = x + 62;
+    x = x + step;
     GG.style.left = x + "px";
+    console.log(x);
     finish();
   } else if (event.keyCode == 40 && y !== maxHeight) {
     // идем вниз
     border40();
-    y = y + 62;
+    y = y + step;
     GG.style.top = y + "px";
     finish();
+    console.log(y);
   } else if (event.keyCode == 38 && y !== 0) {
     // идем вверх
     border38();
-    y = y - 62;
+    y = y - step;
     GG.style.top = y + "px";
     finish();
   }
@@ -209,9 +212,9 @@ window.onkeydown = function move() {
   function border37() {
     //стена для стрелки влево
     for (i = 0; i < dlinaS; i++) {
-      if (x == stenaX[i] * 62 && y == stenaY[i] * 62) {
+      if (x == stenaX[i] * step && y == stenaY[i] * step) {
         console.log("Стена слева" + stenaX[i] + " " + stenaY[i]);
-        x = x + 62;
+        x = x + step;
       }
     }
   }
@@ -219,9 +222,9 @@ window.onkeydown = function move() {
   function border39() {
     //стена для стрелки вправо
     for (i = 0; i < dlinaS; i++) {
-      if (x == stenaX[i] * 62 - 62 && y == stenaY[i] * 62) {
+      if (x == stenaX[i] * step - step && y == stenaY[i] * step) {
         console.log("Стена справа" + stenaX[i] + " " + stenaY[i]);
-        x = x - 62;
+        x = x - step;
       }
     }
   }
@@ -229,9 +232,9 @@ window.onkeydown = function move() {
   function border38() {
     // стена для стрелки вверх
     for (i = 0; i < dlinaV; i++) {
-      if (x == verhX[i] * 62 && y == verhY[i] * 62) {
+      if (x == verhX[i] * step && y == verhY[i] * step) {
         console.log("Потолок наверху" + verhX[i] + " " + verhY[i]);
-        y = y + 62;
+        y = y + step;
       }
     }
   }
@@ -239,12 +242,33 @@ window.onkeydown = function move() {
   function border40() {
     // стена для стрелки вниз
     for (i = 0; i < dlinaV; i++) {
-      if (x == verhX[i] * 62 && y == verhY[i] * 62 - 62) {
+      if (x == verhX[i] * step && y == verhY[i] * step - step) {
         console.log("Потолок внизу" + verhX[i] + " " + verhY[i]);
-        y = y - 62;
+        y = y - step;
       }
     }
   }
-  newX = x / 62;
-  newY = y / 62;
+  newX = x / step;
+  newY = y / step;
+  // console.log("step in func" + step);
+};
+
+window.addEventListener("resize", (event) => {
+  console.log("resize");
+  console.log(screen.width);
+  console.log(step);
+  if (screen.width < 1280) {
+    step = 47;
+    // console.log(step);
+    console.log(newX);
+  } else {
+    step = 62;
+    console.log(newX);
+  }
+});
+window.onload = () => {
+  //console.log("hello wind " + screen.width);
+  if (screen.width < 1280) {
+    step = 47;
+  }
 };

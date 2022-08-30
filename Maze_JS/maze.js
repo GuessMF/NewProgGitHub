@@ -11,6 +11,7 @@ let step = 62; //длина шага ГГ
 let verhX = []; // положение в ряду потолка
 let verhY = []; // номер ряда потолка
 let dlinaV; // длина массива с потолками
+//dd
 
 let table = document.getElementById("table");
 

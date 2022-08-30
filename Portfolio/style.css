@@ -1,0 +1,98 @@
+body {
+  background-color: rgb(155, 157, 160);
+}
+
+.changeTheme {
+  margin: 3% auto;
+  border: black solid 1px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
+  text-align: center;
+}
+.imageTheme {
+  margin: 25% auto;
+  width: 40px;
+  height: 40px;
+}
+
+.portfolioInfo {
+  position: relative;
+  /* display: flex; */
+  margin: 2% auto;
+  width: 631px;
+  height: 215px;
+  border: black solid 1px;
+}
+.information {
+  position: absolute;
+  margin-top: 29.5px;
+  margin-left: 257px;
+  width: 372px;
+  height: 156px;
+  border: black solid 1px;
+}
+.socialLinks {
+  border: black solid 1px;
+  margin-top: 60px;
+  width: 280px;
+  height: 40px;
+}
+.socialImg {
+  margin-left: 5px;
+  margin-right: 20px;
+  margin-top: 3px;
+  width: 36px;
+  height: 34px;
+}
+
+.portfolioPhoto {
+  position: absolute;
+  border: black solid 1px;
+  width: 215px;
+  height: 213px;
+  border-radius: 50%;
+}
+.portfolioFacts {
+  position: relative;
+  width: 631px;
+  height: 142px;
+  border: black solid 1px;
+  margin: 2% auto;
+}
+.fact1 {
+  text-align: center;
+  margin-top: 20px;
+  margin-left: 30px;
+  position: absolute;
+  width: 148px;
+  height: 102px;
+  border: black solid 1px;
+}
+.fact2 {
+  text-align: center;
+  position: absolute;
+  margin-top: 20px;
+  margin-left: 248px;
+  width: 125px;
+  height: 102px;
+  border: black solid 1px;
+}
+.fact3 {
+  /* подстроить */
+  text-align: center;
+  position: absolute;
+  margin-top: 20px;
+  margin-left: 479px;
+  width: 119px;
+  height: 102px;
+  border: black solid 1px;
+}
+.buttonsContact {
+}
+.tabsButton {
+}
+.tabsContent {
+}
+.footer {
+}

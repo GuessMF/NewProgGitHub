@@ -1,3 +1,22 @@
-body {
-  background-color: aqua;
+input {
+  width: 100px;
+  height: 20px;
+  border: black solid 1px;
+}
+
+button {
+  margin-top: 10px;
+  width: 105px;
+  height: 20px;
+  border: black solid 1px;
+}
+/* .table {
+  background-color: black;
+} */
+
+td {
+  width: 30px;
+  height: 30px;
+  background-color: rgb(239, 226, 226);
+  border: black solid 1px;
 }

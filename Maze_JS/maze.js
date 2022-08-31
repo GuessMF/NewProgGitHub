@@ -48,7 +48,7 @@ function makeMaze() {
     userY.value > 0 &&
     userX.value > 0
   ) {
-    console.log(userY.value);
+    console.log("usery.value = " + userY.value);
     makeMazee();
   } else if (stat == true) {
     alert("Вы уже играете");
@@ -187,26 +187,29 @@ window.onkeydown = function move() {
     border37();
     x = x - step;
     GG.style.left = x + "px";
+    console.log("x = " + x + " y = " + y);
     finish();
   } else if (event.keyCode == 39 && x !== maxWidth) {
     //идем вправо
     border39();
     x = x + step;
     GG.style.left = x + "px";
-    console.log(x);
+    console.log("x = " + x + " y = " + y);
     finish();
   } else if (event.keyCode == 40 && y !== maxHeight) {
     // идем вниз
     border40();
     y = y + step;
     GG.style.top = y + "px";
+    console.log("x = " + x + " y = " + y);
     finish();
-    console.log(y);
+    // console.log(y);
   } else if (event.keyCode == 38 && y !== 0) {
     // идем вверх
     border38();
     y = y - step;
     GG.style.top = y + "px";
+    console.log("x = " + x + " y = " + y);
     finish();
   }
 
@@ -249,27 +252,31 @@ window.onkeydown = function move() {
       }
     }
   }
-  newX = x / step;
-  newY = y / step;
+  // newX = x / step;
+  // newY = y / step;
   // console.log("step in func" + step);
 };
 
 window.addEventListener("resize", (event) => {
-  console.log("resize");
-  console.log(screen.width);
-  console.log(step);
-  if (screen.width < 1280) {
+  //console.log("resize");
+  // console.log(screen.width);
+  //console.log(step);
+  if (screen.width <= 1280) {
     step = 47;
-    // console.log(step);
-    console.log(newX);
   } else {
     step = 62;
-    console.log(newX);
   }
 });
+
 window.onload = () => {
-  //console.log("hello wind " + screen.width);
-  if (screen.width < 1280) {
+  // console.log(screen.width);
+  if (screen.width <= 1280) {
     step = 47;
+    console.log("onload<1280");
+    console.log(x);
+    // x = x / 1.3191;
+    // y = y / 1.3191;
   }
 };
+//отследить положение х и у и при изменении разрешения менять их значения согласно изменению
+//проверять значение х и у сет интервалом или при именении разрешения

@@ -1,5 +1,3 @@
-let userX = document.getElementById("userX"); // высота
-let userY = document.getElementById("userY");
 let stat;
 let x = 0; // исходное положение ГГ
 let y = 0;
@@ -11,9 +9,6 @@ let step = 62; //длина шага ГГ
 let verhX = []; // положение в ряду потолка
 let verhY = []; // номер ряда потолка
 let dlinaV; // длина массива с потолками
-//dd
-
-let table = document.getElementById("table");
 
 let divs = document.getElementsByClassName("square"); // количество созданных дивок
 
@@ -48,14 +43,13 @@ function makeMaze() {
     userY.value > 0 &&
     userX.value > 0
   ) {
-    console.log("usery.value = " + userY.value);
     makeMazee();
   } else if (stat == true) {
     alert("Вы уже играете");
   } else if (userY.value <= 0 || userX.value <= 0) {
     alert("Введите второе число");
   } else {
-    alert("Введите число меньше");
+    alert("Введите число меньше 20");
   }
 }
 
@@ -69,6 +63,9 @@ function makeMazee() {
   let numY = Number(userY);
   let numS; //Рандомное число для стен
   let numV; // Рандомное число для потолков
+
+  console.log(numX);
+  console.log(numY);
 
   for (m = 0; m < numX; m++) {
     // создает в tableBody square и string перебираем высоту
@@ -92,7 +89,6 @@ function makeMazee() {
   divs[dl2].innerHTML = "finish";
 
   for (n = 1; n < Math.floor(dl); n++) {
-    // длинна цикла = ко-во квадратов/ 1.6
     numV = Math.floor(Math.random() * dl); // первое рандомное
     numS = Math.floor(Math.random() * dl); // второе рандомное
 
@@ -135,7 +131,7 @@ function makeMazee() {
     stenaX.push(nomervRyady); // добавляем в массив номер стены в ряду
     stenaX = stenaX.filter((n) => {
       return n != undefined;
-    }); //отсекаем андефайнд
+    });
     stenaY.push(nomerRyada); //добавляем номер ряда стены
     stenaY = stenaY.filter((n) => {
       return n != undefined;
@@ -171,8 +167,6 @@ function finish() {
 function newGame() {
   location.reload();
 }
-let oldX;
-let oldY;
 
 window.onkeydown = function move() {
   stenaX; //стены
@@ -254,9 +248,6 @@ window.onkeydown = function move() {
       }
     }
   }
-  // newX = x / step;
-  // newY = y / step;
-  // console.log("step in func" + step);
 };
 
 function resizeGame() {
@@ -267,8 +258,6 @@ function resizeGame() {
   }
 }
 resizeGame();
-
-// console.log(resize);
 
 window.addEventListener("resize", (event) => {
   resize = true;

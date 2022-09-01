@@ -189,25 +189,7 @@ body {
   text-align: center;
 }
 
-.test {
-  width: 210px;
-  height: 30px;
-  margin-top: 2%;
-  margin-bottom: 2%;
-  margin-left: 143px;
-  padding-left: 10px;
-  font-family: "Roboto", sans-serif;
-  box-shadow: 0 0 7px 0 black;
-  border: 0;
-  border-radius: 15px;
-  background-color: #8d93ab;
-  font-size: 13px;
-}
 @media screen and (max-width: 1280px) {
-  .test {
-    background-color: tomato;
-  }
-
   .gg {
     width: 45px;
     height: 45px;

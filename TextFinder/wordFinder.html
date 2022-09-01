@@ -9,7 +9,6 @@
   </head>
   <body>
     <div class="box">
-      <input id="clear" type="submit" value="Отчистить" onclick="newPage()" />
       <input
         id="input"
         type="text"
@@ -17,11 +16,12 @@
         value=""
         maxlength="1"
         minlength="1"
-        onkeydown="if (event.keyCode == 13)
-        document.getElementById('found').click()"
+        autofocus
       />
+
       <input id="found" type="submit" value="Поиск" />
-      <button onclick="testing()">Test</button>
+      <input id="clear" type="submit" value="Отчистить" onclick="newPage()" />
+
       <p id="cm">Колличество изменений: <a id="changeMe"></a></p>
     </div>
 

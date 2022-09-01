@@ -171,6 +171,8 @@ function finish() {
 function newGame() {
   location.reload();
 }
+let oldX;
+let oldY;
 
 window.onkeydown = function move() {
   stenaX; //стены
@@ -257,25 +259,30 @@ window.onkeydown = function move() {
   // console.log("step in func" + step);
 };
 
+function resizeGame() {
+  if ((x !== 0 || y !== 0) && screen.width <= 1280) {
+    newGame();
+  } else if ((x !== 0 || y !== 0) && screen.width >= 1280) {
+    newGame();
+  }
+}
+resizeGame();
+
+// console.log(resize);
+
 window.addEventListener("resize", (event) => {
-  //console.log("resize");
-  // console.log(screen.width);
-  //console.log(step);
+  resize = true;
   if (screen.width <= 1280) {
     step = 47;
-  } else {
+  } else if (screen.width >= 1280) {
     step = 62;
   }
+  resizeGame();
 });
 
 window.onload = () => {
-  // console.log(screen.width);
   if (screen.width <= 1280) {
     step = 47;
-    console.log("onload<1280");
-    console.log(x);
-    // x = x / 1.3191;
-    // y = y / 1.3191;
   }
 };
 //отследить положение х и у и при изменении разрешения менять их значения согласно изменению

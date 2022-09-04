@@ -89,10 +89,70 @@ body {
   border: black solid 1px;
 }
 .buttonsContact {
+  position: relative;
+  margin: 2% auto;
+  width: 618px;
+  height: 80px;
+  border: black solid 1px;
+}
+.download_butt {
+  background-color: burlywood;
+  width: 290px;
+  height: 80px;
+}
+.contact_butt {
+  background-color: aliceblue;
+  width: 290px;
+  height: 80px;
+  margin-left: 34px;
 }
 .tabsButton {
+  position: relative;
+  margin: 2% auto;
+  border: black solid 1px;
+  width: 760px;
+  height: 110px;
+  border-radius: 20px;
+}
+.portfolio_butt {
+  margin-top: 15px;
+  width: 351.5px;
+  height: 80px;
+  background-color: darkgray;
+  border-radius: 20px;
+}
+.skills_butt {
+  margin-left: 53px;
+  width: 351.5px;
+  height: 80px;
+  background-color: white;
+  border-radius: 20px;
 }
 .tabsContent {
+  margin: 2% auto;
+  position: relative;
+  border: black solid 1px;
+  width: 757px;
+  height: auto;
 }
+
+.portfolio_preview {
+  display: inline-block;
+  margin-top: 2%;
+  margin-left: 8px;
+  width: 362px;
+  height: 226px;
+  border: black solid 1px;
+  border-radius: 15px;
+}
+
 .footer {
+  border: black solid 1px;
+  position: relative;
+  margin: 5% auto;
+}
+.reserved {
+  border: black solid 1px;
+  margin: 2% auto;
+  width: 280px;
 }

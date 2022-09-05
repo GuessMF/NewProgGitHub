@@ -1,0 +1,18 @@
+#textt {
+  background-color: blueviolet;
+}
+.blue {
+  background-color: aqua;
+  width: 490px;
+}
+
+#toMe {
+  width: auto;
+  border: black 1px solid;
+}
+
+.ttext {
+  width: 500px;
+  height: 500px;
+  border: black 1px solid;
+}

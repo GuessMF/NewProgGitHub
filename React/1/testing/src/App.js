@@ -1,5 +1,6 @@
 import "./App.css";
 import React from "react";
+import Component from "./components/Component";
 
 function App() {
   const [count, setCount] = React.useState(0);
@@ -23,6 +24,7 @@ function App() {
           -
         </button>
       </header>
+      <Component />
     </div>
   );
 }

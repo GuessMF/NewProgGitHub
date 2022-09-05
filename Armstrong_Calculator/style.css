@@ -17,7 +17,7 @@ button {
 td {
   width: 40px;
   height: 40px;
-  background-color: rgb(127, 59, 59);
+  background-color: rgb(186, 118, 118);
   border: black solid 1px;
 }
 #container {
@@ -29,4 +29,10 @@ td {
   margin-top: 50px;
   border: black solid 1px;
   background-color: rgb(199, 185, 185);
+}
+
+#canvas {
+  width: auto;
+  height: auto;
+  border: black solid 1px;
 }

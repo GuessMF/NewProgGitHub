@@ -22,8 +22,8 @@ function drawRoom(width, height) {
   div = document.createElement("div");
   div.className = "test";
   div.style.cssText = `
-  width: ${width * 100}px;
-  height: ${height * 100}px
+  width: ${width * 90}px;
+  height: ${height * 90}px
 `;
 
   container.appendChild(div);
@@ -33,19 +33,18 @@ function drawRoom(width, height) {
 function drawBoxs(col, row, parent) {
   let table = document.createElement("table");
   table.className = "table";
-  for (i = 0; i < row; i++) {
+  for (i = 0; i < row / 0.6; i++) {
     let tr = document.createElement("tr");
 
     table.appendChild(tr);
 
-    for (n = 0; n < col; n++) {
+    for (n = 0; n < col / 0.6; n++) {
       let td = document.createElement("td");
       td.className = "td";
       tr.appendChild(td);
     }
   }
   parent.appendChild(table);
-  console.log("test");
 }
 test2.addEventListener("click", () => {
   draw(width.value, height.value);
@@ -56,18 +55,20 @@ function draw(width, height) {
   canvas.style.width = `${width * 100}px`;
   canvas.style.height = `${height * 100}px`;
   let ctx = canvas.getContext("2d");
-
-  for (n = 0; n < width / 0.6; n++) {
-    //ширина
-    for (i = 0; i < height / 0.6; i++) {
-      //высота
-      ctx.save();
-      ctx.fillStyle = "rgb(186, 118, 118)";
-      ctx.translate(31 * n, 16 * i);
-      ctx.fillRect(0, 0, 30, 15);
-      ctx.restore();
+  ctx.fillStyle = "rgb(186, 118, 118)";
+  one = 179 / width;
+  two = 89 / width;
+  for (i = 0; i < width / 0.6; i++) {
+    for (n = 0; n < height / 0.6; n++) {
+      ctx.fillRect(i * (one + 1), n * (two + 1), one, two);
     }
   }
+
+  ploshad = width * height;
+  console.log(ploshad); //площадь комнаты
+  rezultat = ploshad / armstrongPloshad; // количество плит
+  console.log(rezultat);
+  result.innerHTML = rezultat.toFixed(1);
 }
 
 // test.addEventListener("click", () => {

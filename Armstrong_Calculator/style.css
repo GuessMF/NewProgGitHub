@@ -32,7 +32,8 @@ td {
 }
 
 #canvas {
-  width: auto;
-  height: auto;
+  margin-top: 2%;
+  /* width: auto;
+  height: auto; */
   border: black solid 1px;
 }

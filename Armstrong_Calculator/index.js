@@ -65,12 +65,50 @@ function draw(width, height) {
   }
 
   ploshad = width * height;
-  console.log(ploshad); //площадь комнаты
   rezultat = ploshad / armstrongPloshad; // количество плит
-  console.log(rezultat);
   result.innerHTML = rezultat.toFixed(1);
 }
 
+function newnewDraw(width, height) {
+  let canvas = document.getElementById("canvas");
+  canvas.style.width = `${width * 100}px`;
+  canvas.style.height = `${height * 100}px`;
+  let ctx = canvas.getContext("2d");
+  ctx.fillStyle = "white";
+  ctx.lineWidth = 0.1;
+  ctx.strokeStyle = "black";
+
+  // st1 = (width * 100) / Math.trunc(width / 0.6);
+  //console.log(startin);
+  num = 18 / width;
+  st1 = num * 10;
+  st2 = st1 / 2;
+
+  //console.log(startin);
+  for (i = 0; i < Math.trunc(width / 0.6); i++) {
+    for (n = 0; n < Math.trunc(height / 0.6); n++) {
+      vertik = st2 + 0.5 + n * st2;
+      horizontal = st1 + 0.5 + i * st1;
+
+      Number.isInteger(vertik) == true
+        ? (vertik = vertik + 0.5)
+        : (vertik = vertik);
+      Number.isInteger(horizontal) == true
+        ? (horizontal = horizontal + 0.5)
+        : (horizontal = horizontal);
+      ctx.fillRect(0, 0, width * 100, height * 100);
+      ctx.moveTo(horizontal, 0);
+      ctx.lineTo(horizontal, 400);
+      ctx.moveTo(0, vertik);
+      ctx.lineTo(300, vertik);
+      ctx.stroke();
+    }
+    console.log(width / 0.6);
+  }
+}
+test.addEventListener("click", () => {
+  newnewDraw(width.value, height.value);
+});
 // test.addEventListener("click", () => {
 //   drawMaze(height.value, width.value, div);
 // });
@@ -116,3 +154,64 @@ function draw(width, height) {
 // ctx.lineTo(150, 25);
 // ctx.lineTo(25, 50);
 // ctx.stroke();
+
+// for (i = 0; i < 4; i++) {
+//   ctx.save();
+//   ctx.fillRect(0, 0, 300, 300);
+//   ctx.moveTo(60.5 + i * 60, 0);
+//   ctx.lineTo(60.5 + i * 60, 400);
+//   ctx.stroke();
+// }
+// for (n = 0; n < 4; n++) {
+//   ctx.save();
+//   ctx.moveTo(0, 29.5 + n * 30);
+//   ctx.lineTo(300, 29.5 + n * 30);
+//   ctx.stroke();
+// }
+
+//рабоч
+// let canvas = document.getElementById("canvas");
+// canvas.style.width = "300px";
+// canvas.style.height = "300px";
+// let ctx = canvas.getContext("2d");
+// ctx.fillStyle = "rgb(186, 118, 118)";
+// one = 179 / width;
+// two = 89 / width;
+
+// for (i = 0; i < 4; i++) {
+//   for (n = 0; n < 4; n++) {
+//     ctx.fillRect(0, 0, 300, 300);
+//     ctx.moveTo(60.5 + i * 60, 0);
+//     ctx.lineTo(60.5 + i * 60, 400);
+//     ctx.moveTo(0, 29.5 + n * 30);
+//     ctx.lineTo(300, 29.5 + n * 30);
+//     ctx.stroke();
+//   }
+// }
+
+/// WOOORRKKKIIINNGGGG
+// for (i = 0; i < Math.trunc(width / 0.6); i++) {
+//   for (n = 0; n < Math.trunc(height / 0.6); n++) {
+//     vertik = st2 + 0.5 + n * st2;
+//     horizontal = st1 + 0.5 + i * st1;
+//     if (Number.isInteger(vertik) == false) {
+//       ctx.fillRect(0, 0, width * 100, height * 100);
+//       ctx.moveTo(horizontal, 0);
+//       ctx.lineTo(horizontal, 400);
+//       ctx.moveTo(0, vertik);
+//       ctx.lineTo(300, vertik);
+//       ctx.stroke();
+//     } else if (Number.isInteger(vertik) == true || Number.isInteger(horizontal)== true ) {
+//       vertik = vertik + 0.5;
+//       horizontal = horizontal + 0.5;
+//       ctx.fillRect(0, 0, width * 100, height * 100);
+//       ctx.moveTo(horizontal, 0);
+//       ctx.lineTo(horizontal, 400);
+//       ctx.moveTo(0, vertik);
+//       ctx.lineTo(300, vertik);
+//       ctx.stroke();
+//     } else if(Number.isInteger(horizontal)== false ){
+
+//     }
+
+//   }

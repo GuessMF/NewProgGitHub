@@ -16,8 +16,6 @@ calculate.addEventListener("click", () => {
   drawBoxs(height.value, width.value, div);
 });
 
-//let div = document.getElementById("div");
-
 function drawRoom(width, height) {
   div = document.createElement("div");
   div.className = "test";
@@ -71,42 +69,43 @@ function draw(width, height) {
 
 function newnewDraw(width, height) {
   let canvas = document.getElementById("canvas");
-  canvas.style.width = `${width * 100}px`;
-  canvas.style.height = `${height * 100}px`;
+  canvas.classList = "canv";
+  clientWidth = width * 100;
+  clientHeight = height * 100;
+  canvas.width = clientWidth;
+  canvas.height = clientHeight;
+  // canvas.style.width = `${width * 100}px`;
+  // canvas.style.height = `${height * 100}px`;
   let ctx = canvas.getContext("2d");
   ctx.fillStyle = "white";
-  ctx.lineWidth = 0.1;
+  // ctx.lineWidth = 0.1;
   ctx.strokeStyle = "black";
 
   // st1 = (width * 100) / Math.trunc(width / 0.6);
   //console.log(startin);
-  num = 18 / width;
-  st1 = num * 10;
-  st2 = st1 / 2;
+  // num = 18 / width;
+  // st1 = num * 10;
+  // st2 = st1;
+  // st1 = 60;
+  // st2 = 60;
 
-  //console.log(startin);
   for (i = 0; i < Math.trunc(width / 0.6); i++) {
     for (n = 0; n < Math.trunc(height / 0.6); n++) {
-      vertik = st2 + 0.5 + n * st2;
-      horizontal = st1 + 0.5 + i * st1;
-
-      Number.isInteger(vertik) == true
-        ? (vertik = vertik + 0.5)
-        : (vertik = vertik);
-      Number.isInteger(horizontal) == true
-        ? (horizontal = horizontal + 0.5)
-        : (horizontal = horizontal);
-      ctx.fillRect(0, 0, width * 100, height * 100);
-      ctx.moveTo(horizontal, 0);
-      ctx.lineTo(horizontal, 400);
-      ctx.moveTo(0, vertik);
-      ctx.lineTo(300, vertik);
+      ver = 60 + 0.5 + n * 60; // шаг между вертикальными линиями
+      hor = 60 + 0.5 + i * 60; //шаг между горизонтальными линиями
+      ctx.moveTo(hor, 0);
+      ctx.lineTo(hor, clientHeight);
+      ctx.moveTo(0, ver);
+      ctx.lineTo(clientWidth, ver);
       ctx.stroke();
     }
-    console.log(width / 0.6);
   }
 }
 test.addEventListener("click", () => {
+  //let here = document.getElementById("here");
+  // here.classList = "canv";
+
+  //canvas.classList.add = "canv";
   newnewDraw(width.value, height.value);
 });
 // test.addEventListener("click", () => {
@@ -215,3 +214,52 @@ function draw(width, height) {
 //     }
 
 //   }
+
+//// tochno rabocheee
+
+// function newnewDraw(width, height) {
+//   let canvas = document.getElementById("canvas");
+//   clientWidth = width * 100;
+//   clientHeight = height * 100;
+//   canvas.width = clientWidth;
+//   canvas.height = clientHeight;
+//   // canvas.style.width = `${width * 100}px`;
+//   // canvas.style.height = `${height * 100}px`;
+//   let ctx = canvas.getContext("2d");
+//   ctx.fillStyle = "white";
+//   // ctx.lineWidth = 0.1;
+//   ctx.strokeStyle = "black";
+
+//   // st1 = (width * 100) / Math.trunc(width / 0.6);
+//   //console.log(startin);
+//   num = 18 / width;
+//   st1 = num * 10;
+//   st2 = st1;
+
+//   for (i = 0; i < Math.trunc(width / 0.6); i++) {
+//     for (n = 0; n < Math.trunc(height / 0.6); n++) {
+//       vertik = st2 + 0.5 + n * st2;
+//       horizontal = st1 + 0.5 + i * st1;
+//       ctx.lineWidth = 0.1;
+
+//       Number.isInteger(vertik) == true
+//         ? (vertik = vertik + 0.5)
+//         : (vertik = vertik);
+//       Number.isInteger(horizontal) == true
+//         ? (horizontal = horizontal + 0.5)
+//         : (horizontal = horizontal);
+//       ctx.fillRect(0, 0, width * 100, height * 100);
+//       ctx.moveTo(horizontal, 0);
+//       ctx.lineTo(horizontal, 400);
+//       ctx.moveTo(0, vertik);
+//       ctx.lineTo(300, vertik);
+//       ctx.stroke();
+//     }
+//     console.log(width / 0.6);
+//   }
+// }
+// test.addEventListener("click", () => {
+//   newnewDraw(width.value, height.value);
+// });
+
+//// tochno rabochee

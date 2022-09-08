@@ -17,14 +17,6 @@ td {
   border: black solid 1px;
 }
 
-.notation {
-  background-color: rgb(233, 179, 118);
-}
-.numbers {
-  border: black solid 1px;
-  background-color: rgb(246, 234, 220);
-}
-
 .cost {
   margin: 2% 9%;
 }
@@ -41,10 +33,10 @@ td {
 }
 
 .testTab {
-  margin-left: -100px;
+  margin-left: -110px;
   /* margin-right: 50px; */
   /* position: absolute; */
   /* display: flex; */
-  width: 20px;
-  background-color: aqua;
+  /* width: px; */
+  background-color: blanchedalmond;
 }

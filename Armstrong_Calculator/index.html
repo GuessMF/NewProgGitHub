@@ -8,23 +8,25 @@
     <title>Armstrong Calculator</title>
   </head>
   <body>
-    <div>
-      <input id="width" type="text" placeholder="Ширина в метрах" />
-      <input id="height" type="text" placeholder="Длина в метрах" />
-      <br />
-      <button id="calculate">Расчитать</button>
-    </div>
-    <div class="cost">
-      <table>
+    <input id="width" type="text" placeholder="Ширина в метрах" />
+    <br />
+    <input id="height" type="text" placeholder="Длина в метрах" />
+    <br />
+    <button id="calculate">Расчитать</button>
+    <br />
+    <button id="centred">Отцентровать</button>
+    <div class="containerMain">
+      <div class="cost">
+        <!-- <table>
         <tr class="notation">
           <td>Площадь комнаты</td>
-          <td>Периметр комнаты</td>
-          <td>Общее ко-во плит Армстронг</td>
-          <td>Ко-во плит Армстронг по ширине</td>
-          <td>Ко-во плит Армстронг по высоте</td>
-          <td>Ширина правого крайнего куска</td>
-          <td>Высота нижнего крайнего куска</td>
-          <td>Высота и ширина мелкого куска</td>
+          <td>Периметр комнаты (м)</td>
+          <td>Общее ко-во плит Армстронг (шт)</td>
+          <td>Ко-во плит Армстронг по ширине (шт)</td>
+          <td>Ко-во плит Армстронг по высоте (шт)</td>
+          <td>Ширина правого крайнего куска (м)</td>
+          <td>Высота нижнего крайнего куска (м)</td>
+          <td>Высота и ширина мелкого куска (м)</td>
         </tr>
         <tr class="numbers">
           <td id="ploshadd"></td>
@@ -36,11 +38,47 @@
           <td id="ostatokNiz"></td>
           <td id="melkyi"></td>
         </tr>
-      </table>
+      </table> -->
+        <table class="testTab">
+          <tbody>
+            <tr>
+              <td>Описание</td>
+              <td>Ко-во</td>
+            </tr>
+            <tr>
+              <td>Площадь комнаты</td>
+              <td>32</td>
+            </tr>
+            <tr>
+              <td>Периметр комнаты</td>
+              <td>Ячейка 8</td>
+            </tr>
+            <tr>
+              <td>Ячейка 7</td>
+              <td>Ячейка 8</td>
+            </tr>
+            <tr>
+              <td>Ячейка 7</td>
+              <td>Ячейка 8</td>
+            </tr>
+            <tr>
+              <td>Ячейка 7</td>
+              <td>Ячейка 8</td>
+            </tr>
+            <tr>
+              <td>Ячейка 7</td>
+              <td>Ячейка 8</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="container">
+        <canvas id="canvas"></canvas>
+      </div>
     </div>
-    <div id="container">
+    <!-- <div id="container">
       <canvas id="canvas"></canvas>
-    </div>
+    </div> -->
 
     <script src="index.js"></script>
   </body>

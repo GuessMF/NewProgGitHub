@@ -1,47 +1,34 @@
-//let armstrongPloshad = 0.36; //metr
 // сделать валидацию в инпуты чтоб вместо запятой была точка
-// поправить размытие при дробных числах 2 и 2,61
-//добавить блоки а б с для не отцентрованного лабиринта
-//внести в таблицу
-//отредактировать что бы при нуле не писал в таблицу и не выводил букву
-//сделать букву в канвасе четче
-//кку
+
 let div;
 calculate.addEventListener("click", () => {
-  // a = Number(width.value);
-  // b = Number(height.value);
-  // ploshadd.innerHTML = (a * b).toFixed(2) + " m²";
+  a = Number(width.value);
+  b = Number(height.value);
+  pl = (a * b).toFixed(2); //площадь фигуры
+  per = ((a + b) * 2).toFixed(2); // периметр фигуры
+  bl = ((a * b) / 0.36).toFixed(1); //всего блоков по 0.36m
 
-  // perimetr.innerHTML = ((a + b) * 2).toFixed(2);
-  // blocks.innerHTML = ((a * b) / 0.36).toFixed(1);
-  // visote.innerHTML = (b / 0.6).toFixed(1);
-  // shirine.innerHTML = (a / 0.6).toFixed(1);
-
-  // ostPrav = Number(shirine.innerHTML) - Math.floor(a / 0.6);
-  // ostatokPrav.innerHTML = (ostPrav * 0.6).toFixed(2);
-
-  // ostNiz = Number(visote.innerHTML) - Math.floor(b / 0.6);
-
-  // ostatokNiz.innerHTML = (ostNiz * 0.6).toFixed(2);
-  // ostatokNiz.innerHTML == 0 || ostatokPrav.innerHTML == 0
-  //   ? console.log("")
-  //   : (melkyi.innerHTML =
-  //       " Выс  " +
-  //       ostatokNiz.innerHTML +
-  //       "  " +
-  //       " Шир  " +
-  //       ostatokPrav.innerHTML);
+  oneBlock.innerHTML = "0.6m x 0.6m";
+  ploshad.innerHTML = pl + "m²";
+  perimetr.innerHTML = per + "m";
+  blocks.innerHTML = bl + " штук";
+  razmA;
+  razmB;
+  razmC;
 
   canvasDraw(width.value, height.value);
 });
 centred.addEventListener("click", () => {
   a = Number(width.value);
   b = Number(height.value);
+  pl = (a * b).toFixed(2); //площадь фигуры
+  per = ((a + b) * 2).toFixed(2); // периметр фигуры
+  bl = ((a * b) / 0.36).toFixed(1); //всего блоков по 0.36m
 
-  ploshad.innerHTML = (a * b).toFixed(2);
-  perimetr.innerHTML = ((a + b) * 2).toFixed(2);
-  blocks.innerHTML = ((a * b) / 0.36).toFixed(1);
-
+  oneBlock.innerHTML = "0.6m x 0.6m";
+  ploshad.innerHTML = pl + "m²";
+  perimetr.innerHTML = per + "m";
+  blocks.innerHTML = bl + " штук";
   razmA;
   razmB;
   razmC;
@@ -74,14 +61,43 @@ function canvasDraw(width, height) {
     }
   }
   //подписанные
-  // ctx.fillStyle = "#00F";
-  // ctx.font = "7pt Arial";
-  // ctx.fillWidth = 1;
-  // ostatokNiz.innerHTML == 0 || ostatokPrav.innerHTML == 0
-  //   ? console.log("no")
-  //   : ctx.fillText(`${ostatokNiz.innerHTML}`, hor - 10.5, clientHeight);
-  // ctx.fillText(`${ostatokPrav.innerHTML}`, hor, ver - 2);
-  // сtx.strokeText(`${ostatokPrav.innerHTML}`, ver - 1, clientHeight - 30);
+  ctx.fillStyle = "#00F";
+  ctx.font = "8pt Arial";
+
+  centHor = (clientWidth - hor) / 2; //центр кравнего блока для отцентровски буквы
+  centVer = (clientHeight - ver) / 2;
+
+  //отрисовка А если обе стороны больше 0
+  if (
+    ((clientHeight - ver) / 100).toFixed(2) > 0 &&
+    ((clientWidth - hor) / 100).toFixed(2) > 0
+  ) {
+    ctx.fillText("a", hor + centHor, clientHeight - 1);
+    razmA.innerHTML =
+      `${((clientHeight - ver) / 100).toFixed(2)}` +
+      "m x " +
+      `${((clientWidth - hor) / 100).toFixed(2)}` +
+      "m";
+  } else {
+    razmA.innerHTML = "0";
+  }
+
+  //отрисовка В если его ширина больше 0
+  if (((clientWidth - hor) / 100).toFixed(2) > 0) {
+    ctx.fillText("b", hor + centHor, ver - 1);
+    razmB.innerHTML =
+      "0.6m x " + `${((clientWidth - hor) / 100).toFixed(2)}` + "m";
+  } else {
+    razmB.innerHTML = "0";
+  }
+
+  //отрисовка С если его высота больше 0
+  if (((clientHeight - ver) / 100).toFixed(2) > 0) {
+    ctx.fillText("c", hor - centHor, clientHeight - 1);
+    razmC.innerHTML = `${((clientHeight - ver) / 100).toFixed(2)}` + "m x 0.6m";
+  } else {
+    razmC.innerHTML = "0";
+  }
 }
 
 function canvasDrawCentred(width, height) {
@@ -106,8 +122,7 @@ function canvasDrawCentred(width, height) {
     for (n = 0; n < Math.trunc(height / 0.6) + 1; n++) {
       ver = kraiHor + 0.75 + n * 60; // шаг между вертикальными линиями
       hor = kraiVert + 0.75 + i * 60; //шаг между горизонтальными линиями
-      //firstHor = (clientWidth - hor) / 2;
-      //console.log(hor);
+
       ctx.fillRect(0, 0, clientWidth, clientHeight); //фон
       ctx.moveTo(hor, 0);
       ctx.lineTo(hor, clientHeight);
@@ -116,23 +131,33 @@ function canvasDrawCentred(width, height) {
       ctx.stroke();
     }
   }
-  razmA.innerHTML =
-    `${(kraiHor / 100).toFixed(2)}` + " x " + `${(kraiVert / 100).toFixed(2)}`;
-  // esli 0, to ne pokaz
-  razmB.innerHTML = `${(kraiHor / 100).toFixed(2)}` + " x  0.6";
-
-  razmC.innerHTML = "0.6 x " + `${(kraiVert / 100).toFixed(2)}`;
-
-  console.log(kraiHor + " kraiHor "); // высота обрезков А
-  //console.log(kraiVert + " kraiVert " + " ");
-  // console.log(hor);
+  //блок А если равен нулю то не показывать в таблице
+  if ((kraiHor / 100).toFixed(2) > 0 && (kraiVert / 100).toFixed(2) > 0) {
+    razmA.innerHTML =
+      `${(kraiHor / 100).toFixed(2)}` +
+      "m  x " +
+      `${(kraiVert / 100).toFixed(2)}` +
+      "m";
+  } else {
+    razmA.innerHTML = "0";
+  }
+  //блок В если равен нулю то не показывать в таблице
+  if ((kraiHor / 100).toFixed(2) > 0) {
+    razmB.innerHTML = `${(kraiHor / 100).toFixed(2)}` + "m  x  0.6m";
+  } else {
+    razmB.innerHTML = "0";
+  }
+  //блок С если равен нулю то не показывать в таблице
+  if ((kraiVert / 100).toFixed(2) > 0) {
+    razmC.innerHTML = "0.6m x " + `${(kraiVert / 100).toFixed(2)}` + "m";
+  } else {
+    razmC.innerHTML = "0";
+  }
 
   ctx.fillStyle = "#00F";
   ctx.font = "8pt Arial";
-  // ctx.fillWidth = 1;
+
   ctx.fillText("a", kraiVert / 2 - 5, kraiHor);
   ctx.fillText("b", kraiVert + 25, kraiHor);
   ctx.fillText("c", kraiVert / 2 - 5, kraiHor + 60);
-  // ctx.fillText(`${ostatokPrav.innerHTML}`, hor, ver - 2);
-  // сtx.strokeText(`${ostatokPrav.innerHTML}`, ver - 1, clientHeight - 30);
 }

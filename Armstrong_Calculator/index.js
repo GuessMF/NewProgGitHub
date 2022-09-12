@@ -1,41 +1,61 @@
-// сделать валидацию в инпуты чтоб вместо запятой была точка
+//валидация инпутов только на цифры и замена запятой на точку
+width.addEventListener("keyup", function () {
+  this.value = this.value.replace(/[^\d.,-]/g, "").replace(/[,-]/g, ".");
+});
 
-let div;
+height.addEventListener("keyup", function () {
+  this.value = this.value.replace(/[^\d.,-]/g, "").replace(/[,-]/g, ".");
+});
+
+//работает если ввести больше чем 38 но грузится процессор и очень долго рендерит
 calculate.addEventListener("click", () => {
-  a = Number(width.value);
-  b = Number(height.value);
-  pl = (a * b).toFixed(2); //площадь фигуры
-  per = ((a + b) * 2).toFixed(2); // периметр фигуры
-  bl = ((a * b) / 0.36).toFixed(1); //всего блоков по 0.36m
+  if (width.value == "" || height.value == "") {
+    alert("Введите размеры комнаты");
+  } else if (width.value > 35 || height.value > 35) {
+    alert("Ведите число до 35");
+  } else {
+    a = Number(width.value);
+    b = Number(height.value);
+    pl = (a * b).toFixed(2); //площадь фигуры
+    per = ((a + b) * 2).toFixed(2); // периметр фигуры
+    bl = ((a * b) / 0.36).toFixed(1); //всего блоков по 0.36m
 
-  oneBlock.innerHTML = "0.6m x 0.6m";
-  ploshad.innerHTML = pl + "m²";
-  perimetr.innerHTML = per + "m";
-  blocks.innerHTML = bl + " штук";
-  razmA;
-  razmB;
-  razmC;
+    oneBlock.innerHTML = "0.6m x 0.6m";
+    ploshad.innerHTML = pl + "m²";
+    perimetr.innerHTML = per + "m";
+    blocks.innerHTML = bl + " штук";
+    razmA;
+    razmB;
+    razmC;
 
-  canvasDraw(width.value, height.value);
+    canvasDraw(width.value, height.value);
+  }
 });
 centred.addEventListener("click", () => {
-  a = Number(width.value);
-  b = Number(height.value);
-  pl = (a * b).toFixed(2); //площадь фигуры
-  per = ((a + b) * 2).toFixed(2); // периметр фигуры
-  bl = ((a * b) / 0.36).toFixed(1); //всего блоков по 0.36m
+  if (width.value == "" || height.value == "") {
+    alert("Введите размеры комнаты");
+  } else if (width.value > 35 || height.value > 35) {
+    alert("Введите число до 35");
+  } else {
+    a = Number(width.value);
+    b = Number(height.value);
+    pl = (a * b).toFixed(2); //площадь фигуры
+    per = ((a + b) * 2).toFixed(2); // периметр фигуры
+    bl = ((a * b) / 0.36).toFixed(1); //всего блоков по 0.36m
 
-  oneBlock.innerHTML = "0.6m x 0.6m";
-  ploshad.innerHTML = pl + "m²";
-  perimetr.innerHTML = per + "m";
-  blocks.innerHTML = bl + " штук";
-  razmA;
-  razmB;
-  razmC;
+    oneBlock.innerHTML = "0.6m x 0.6m";
+    ploshad.innerHTML = pl + "m²";
+    perimetr.innerHTML = per + "m";
+    blocks.innerHTML = bl + " штук";
+    razmA;
+    razmB;
+    razmC;
 
-  canvasDrawCentred(width.value, height.value);
+    canvasDrawCentred(width.value, height.value);
+  }
 });
 
+// минимум нарезки
 function canvasDraw(width, height) {
   canvas = document.getElementById("canvas");
   canvas.classList = "canv";
@@ -45,7 +65,7 @@ function canvasDraw(width, height) {
   canvas.height = clientHeight;
 
   let ctx = canvas.getContext("2d");
-  ctx.fillStyle = "rgb(246, 234, 220)";
+  ctx.fillStyle = "#f8f8f8";
   ctx.strokeStyle = "black";
 
   for (i = 0; i < Math.trunc(width / 0.6); i++) {
@@ -61,7 +81,7 @@ function canvasDraw(width, height) {
     }
   }
   //подписанные
-  ctx.fillStyle = "#00F";
+  ctx.fillStyle = "red";
   ctx.font = "8pt Arial";
 
   centHor = (clientWidth - hor) / 2; //центр кравнего блока для отцентровски буквы
@@ -99,9 +119,8 @@ function canvasDraw(width, height) {
     razmC.innerHTML = "0";
   }
 }
-
+//выравненные
 function canvasDrawCentred(width, height) {
-  //выравненные
   canvas = document.getElementById("canvas");
   canvas.classList = "canv";
   clientWidth = width * 100;
@@ -110,7 +129,7 @@ function canvasDrawCentred(width, height) {
   canvas.height = clientHeight;
 
   let ctx = canvas.getContext("2d");
-  ctx.fillStyle = "rgb(246, 234, 220)";
+  ctx.fillStyle = "#f8f8f8";
   ctx.strokeStyle = "black";
 
   shirLast = 60 + 0.5 + (Math.trunc(width / 0.6) - 1) * 60;
@@ -154,7 +173,7 @@ function canvasDrawCentred(width, height) {
     razmC.innerHTML = "0";
   }
 
-  ctx.fillStyle = "#00F";
+  ctx.fillStyle = "red";
   ctx.font = "8pt Arial";
 
   ctx.fillText("a", kraiVert / 2 - 5, kraiHor);

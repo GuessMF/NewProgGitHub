@@ -5,45 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap"
+      rel="stylesheet"
+    />
     <title>Armstrong Calculator</title>
   </head>
   <body>
-    <input id="width" type="text" placeholder="Ширина в метрах" />
-    <br />
-    <input id="height" type="text" placeholder="Длина в метрах" />
-    <br />
-    <button id="calculate">Расчитать</button>
-    <br />
-    <button id="centred">Отцентровать</button>
     <div class="containerMain">
+      <div class="header">
+        <input id="width" type="text" placeholder="Ширина в метрах" />
+        <br />
+        <input id="height" type="text" placeholder="Длина в метрах" />
+        <br />
+        <button id="calculate">Расчитать</button>
+        <br />
+        <button id="centred">Отцентровать</button>
+      </div>
       <div class="cost">
-        <!-- <table>
-        <tr class="notation">
-          <td>Площадь комнаты</td>
-          <td>Периметр комнаты (м)</td>
-          <td>Общее ко-во плит Армстронг (шт)</td>
-          <td>Ко-во плит Армстронг по ширине (шт)</td>
-          <td>Ко-во плит Армстронг по высоте (шт)</td>
-          <td>Ширина правого крайнего куска (м)</td>
-          <td>Высота нижнего крайнего куска (м)</td>
-          <td>Высота и ширина мелкого куска (м)</td>
-        </tr>
-        <tr class="numbers">
-          <td id="ploshadd"></td>
-          <td id="perimetr"></td>
-          <td id="blocks"></td>
-          <td id="visote"></td>
-          <td id="shirine"></td>
-          <td id="ostatokPrav"></td>
-          <td id="ostatokNiz"></td>
-          <td id="melkyi"></td>
-        </tr>
-      </table> -->
         <table class="testTab">
-          <tr>
-            <td>Описание</td>
-            <td>Ко-во</td>
-          </tr>
           <tr>
             <td>Площадь комнаты</td>
             <td id="ploshad"></td>
@@ -57,31 +39,25 @@
             <td id="blocks"></td>
           </tr>
           <tr>
-            <td>Размер 1 блока</td>
+            <td>Размер блока</td>
             <td id="oneBlock"></td>
           </tr>
           <tr>
-            <td>Размер А</td>
+            <td>Размер блока А</td>
             <td id="razmA"></td>
           </tr>
           <tr>
-            <td>Размер В</td>
+            <td>Размер блока В</td>
             <td id="razmB"></td>
           </tr>
           <tr>
-            <td>Размер С</td>
+            <td>Размер блока С</td>
             <td id="razmC"></td>
           </tr>
         </table>
       </div>
-      <div id="container">
-        <canvas id="canvas"></canvas>
-      </div>
     </div>
-    <!-- <div id="container">
-      <canvas id="canvas"></canvas>
-    </div> -->
-
+    <canvas id="canvas"></canvas>
     <script src="index.js"></script>
   </body>
 </html>

@@ -1,14 +1,19 @@
+/* font-family: "Poppins", sans-serif; */
+
 body {
-  background-color: rgb(155, 157, 160);
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  background-color: #e5e5e5;
 }
 
 .changeTheme {
   margin: 3% auto;
-  border: black solid 1px;
+  /* border: black solid 1px; */
   width: 80px;
   height: 80px;
   border-radius: 50px;
   text-align: center;
+  background-color: #ffffff;
 }
 .imageTheme {
   margin: 25% auto;
@@ -22,28 +27,36 @@ body {
   margin: 2% auto;
   width: 631px;
   height: 215px;
-  border: black solid 1px;
+  /* border: black solid 1px; */
+}
+
+.name {
+  font-size: 45px;
+  color: #3d3d3d;
+}
+.post {
+  font-size: 22px;
+  color: #575757;
 }
 .information {
   position: absolute;
   margin-top: 29.5px;
   margin-left: 257px;
   width: 372px;
-  height: 156px;
-  border: black solid 1px;
+  height: 116px;
+  /* border: black solid 1px; */
 }
 .socialLinks {
-  border: black solid 1px;
-  margin-top: 60px;
-  width: 280px;
-  height: 40px;
+  margin-left: -3px;
+  /* border: black solid 1px; */
+  width: 282px;
+  height: 38px;
 }
 .socialImg {
-  margin-left: 5px;
   margin-right: 20px;
   margin-top: 3px;
-  width: 36px;
-  height: 34px;
+  width: 34px;
+  height: 30px;
 }
 
 .portfolioPhoto {
@@ -53,12 +66,32 @@ body {
   height: 213px;
   border-radius: 50%;
 }
+
+.avatar {
+  /* width: 215px;
+  height: 213px; */
+  width: 215px;
+  height: 213px;
+  border-radius: 50%;
+}
+
 .portfolioFacts {
   position: relative;
   width: 631px;
   height: 142px;
-  border: black solid 1px;
+  /* border: black solid 1px; */
   margin: 2% auto;
+}
+
+.factsNumber {
+  font-size: 24px;
+  color: #3d3d3d;
+}
+.factsDescription {
+  font-size: 22px;
+  color: #575757;
+  text-align: center;
+  margin-top: 0;
 }
 .fact1 {
   text-align: center;
@@ -67,7 +100,7 @@ body {
   position: absolute;
   width: 148px;
   height: 102px;
-  border: black solid 1px;
+  /* border: black solid 1px; */
 }
 .fact2 {
   text-align: center;
@@ -76,7 +109,7 @@ body {
   margin-left: 248px;
   width: 125px;
   height: 102px;
-  border: black solid 1px;
+  /* border: black solid 1px; */
 }
 .fact3 {
   /* подстроить */
@@ -86,53 +119,78 @@ body {
   margin-left: 479px;
   width: 119px;
   height: 102px;
-  border: black solid 1px;
+  /* border: black solid 1px; */
 }
 .buttonsContact {
   position: relative;
   margin: 2% auto;
   width: 618px;
   height: 80px;
-  border: black solid 1px;
+  /* border: black solid 1px; */
 }
 .download_butt {
-  background-color: burlywood;
+  background-color: #fbd144;
+  color: #3d3d3d;
+  font-size: 22px;
   width: 290px;
   height: 80px;
+  border-radius: 12px;
+  border: none;
+}
+.vector {
+  color: #3d3d3d;
+  width: 16px;
+  height: 16px;
 }
 .contact_butt {
-  background-color: aliceblue;
+  font-size: 22px;
+  color: #3d3d3d;
+  background-color: #ffffff;
   width: 290px;
   height: 80px;
-  margin-left: 34px;
+  margin-left: 33px;
+  border-radius: 12px;
+  border: none;
 }
 .tabsButton {
+  background-color: #ffffff;
   position: relative;
   margin: 2% auto;
-  border: black solid 1px;
+  /* border: black solid 1px; */
   width: 760px;
   height: 110px;
   border-radius: 20px;
 }
 .portfolio_butt {
+  color: #19191b;
+  font-size: 22px;
   margin-top: 15px;
+  margin-left: 15px;
   width: 351.5px;
   height: 80px;
-  background-color: darkgray;
-  border-radius: 20px;
+  background-color: #d7d7d7;
+  border-radius: 12px;
+  border: none;
 }
 .skills_butt {
-  margin-left: 53px;
+  color: #19191b;
+  font-size: 22px;
+  margin-left: 22px;
   width: 351.5px;
   height: 80px;
-  background-color: white;
-  border-radius: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: none;
+}
+.skills_butt:hover {
+  background-color: #d7d7d7;
 }
 .tabsContent {
+  /* background-color: #ffffff; */
   margin: 2% auto;
   position: relative;
-  border: black solid 1px;
-  width: 757px;
+  /* border: black solid 1px; */
+  width: 760px;
   height: auto;
 }
 
@@ -140,19 +198,27 @@ body {
   display: inline-block;
   margin-top: 2%;
   margin-left: 8px;
-  width: 362px;
+  width: 360px;
   height: 226px;
-  border: black solid 1px;
+  /* border: black solid 1px; */
+  border-radius: 15px;
+}
+.portfolio_screen {
+  width: 360px;
+  height: 226px;
   border-radius: 15px;
 }
 
 .footer {
-  border: black solid 1px;
+  /* border: black solid 1px; */
   position: relative;
   margin: 5% auto;
 }
 .reserved {
-  border: black solid 1px;
+  font-size: 22px;
+  color: #575757;
+  /* border: black solid 1px; */
   margin: 2% auto;
-  width: 280px;
+  width: 500px;
+  height: 40px;
 }

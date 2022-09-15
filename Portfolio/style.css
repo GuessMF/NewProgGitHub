@@ -10,6 +10,19 @@ body.dark-theme {
   background-color: #0c151d;
 }
 
+/* @media (max-width: 390px) {
+  .changeTheme {
+    background-color: #fbd144;
+  }
+} */
+
+/* @media screen and (min-width: 390px) {
+  .changeTheme {
+    width: 10px;
+    margin-left: 50%;
+    background-color: #fbd144;
+  }
+} */
 .changeTheme {
   margin: 3% auto;
   width: 80px;
@@ -297,3 +310,48 @@ body.dark-theme {
   width: 500px;
   height: 40px;
 }
+/* 
+@media screen and (max-width: 390px) {
+  .changeTheme {
+    position: relative;
+    margin: 5% auto;
+    width: 80px;
+    /* margin-left: 350px; */
+/* border: 1px black solid; */
+/* }
+  .portfolioInfo {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: auto;
+    /* border: 1px black solid; */
+/*}
+  .portfolioPhoto {
+    margin-left: 260px;
+    margin-right: 100px;
+    margin-bottom: 100px;
+    margin-top: 30px;
+    /* border: 1px black solid; */
+/* }
+  .information {
+    margin-top: 300px;
+    margin-left: 0;
+    border: 1px black solid;
+    width: 844px;
+    height: 90px;
+    text-align: center;
+  }
+  .name {
+    margin-left: 150px;
+    font-size: 60px;
+    width: 844px;
+    border: 1px black solid;
+  }
+  .post {
+    border: 1px black solid;
+    text-align: center;
+  }
+  .portfolioFacts {
+    margin-top: 600px;
+  }
+} */
